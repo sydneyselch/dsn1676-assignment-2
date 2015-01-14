@@ -22,18 +22,34 @@ html {
   box-sizing: inherit;
 }
 
+main{   
+    text-align: center;
+}
+
 .clock-face {
   height: 300px;
   width: 300px;
   background-image: url(../img/clock-face.svg); 
-    position: relative;
+  position: relative;
+  margin: 0 auto 0;    
 }
+
+.clock-face:target .hand-hour {
+    transform:rotate(360deg)
+}
+
+.clock-face:target .hand-minute {
+    transform:rotate(4320deg)
+}
+
 
 .hand {
     width: 14px;
     position: absolute;
     right: calc(50% - 7px);
-    bottom: calc(50% - 7px);
+    bottom: 50%;
+    transition: all 6s linear;
+    transform-origin: bottom center;
 }
 
 .center {
@@ -43,3 +59,42 @@ html {
     bottom: calc(50% - 14px)
 }
 
+.button {
+    width: 6em;
+    line-height: 6em;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    background-color: green;
+    display: inline-block;
+    margin-bottom: 1em;
+    text-decoration: none;
+    color:white;
+    transition: all 1000ms linear;  
+}
+
+.button1 {
+    width: 6em;
+    line-height: 6em;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    background-color: red;
+    display: inline-block;
+    margin: 1em;
+    text-decoration: none;
+    color:white;
+    transition: all 1000ms linear;   
+}
+
+.button:hover {
+    background-color:white;
+    color:black
+   
+}
+
+.button1:hover {
+    background-color:white;
+    color:black
+   
+}
